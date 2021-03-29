@@ -10,7 +10,7 @@ Usage: `/tellraw {target} (message...)`
 ### Target Subs
 
 | Code | Description |
-|------------------|
+|------|-----------|
 | `@a` | Everyone in the server |
 | `@r` | Random player in the server |
 | `@s` | Command sender |
