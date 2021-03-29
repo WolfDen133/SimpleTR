@@ -14,7 +14,6 @@ Code | Description
 `@a` | Everyone in the server 
 `@r` | Random player in the server
 `@s` | Command sender
-------------------
 
 You can also send a message to more than 1 player by executing `/tellraw player1,player2 (message...)`
  
