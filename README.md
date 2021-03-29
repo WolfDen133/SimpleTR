@@ -9,6 +9,8 @@ The command is very easy to use.
 
 Usage: `/tellraw {target} (message...)`
 
+Permission: `tellraw.command.use`
+
 ### Target Subs
 
 | Code | Description |
