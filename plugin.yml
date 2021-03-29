@@ -1,0 +1,6 @@
+---
+name: SimpleTR
+version: 0.0.1
+main: WolfDen133\SimpleTR\Main
+api: 3.18.0
+...
