@@ -1,6 +1,8 @@
 # SimpleTR
 A simple plugin for sending messages to players without syntax, for pocketmine.
 
+![icon](icon.png)
+
 ## Command
 
 The command is very easy to use.
