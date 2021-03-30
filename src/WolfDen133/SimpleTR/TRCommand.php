@@ -33,16 +33,16 @@ class TRCommand extends Command
                 switch ($args[0]) {
                     case "@a":
                         foreach ($this->plugin->getServer()->getOnlinePlayers() as $player) {
-                            $player->sendMessage(implode(" ", array_splice($args, 1)));
+                            $player->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1)));
                         }
                     break;
                     case "@s":
-                        $sender->sendMessage(implode(" ", array_splice($args, 1)));
+                        $sender->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
                     break;
                     case "@r":
                         $players = $this->plugin->getServer()->getOnlinePlayers();
                         if (count($players) > 0){
-                            $players[mt_rand(0, count($players)-1)]->sendMessage(implode(" ", array_splice($args, 1)));
+                            $players[mt_rand(0, count($players)-1)]->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
                         }
                     break;
                     default:
@@ -50,7 +50,7 @@ class TRCommand extends Command
                         foreach ($targets as $player) {
                             $target = $this->plugin->getServer()->getPlayer($player);
                             if ($target instanceof Player) {
-                                $target->sendMessage(implode(" ", array_splice($args, 1)));
+                                $target->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
                             } else {
                                 $sender->sendMessage(TextFormat::RED . "The player '$player' cannot be found.");
                             }
