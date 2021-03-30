@@ -33,18 +33,19 @@ class TRCommand extends Command
                 switch ($args[0]) {
                     case "@a":
                         foreach ($this->plugin->getServer()->getOnlinePlayers() as $player) {
-                            $player->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1)));
+                            $player->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
                         }
-                    break;
+                        break;
                     case "@s":
-                        $sender->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
-                    break;
+                        $sender->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$sender->getName(), "\n", "§"], array_splice($args, 1))));
+                        break;
                     case "@r":
                         $players = $this->plugin->getServer()->getOnlinePlayers();
                         if (count($players) > 0){
-                            $players[mt_rand(0, count($players)-1)]->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
+                            $player = $players[mt_rand(0, count($players)-1)];
+                            $player->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
                         }
-                    break;
+                        break;
                     default:
                         $targets = explode(",", $args[0]);
                         foreach ($targets as $player) {
@@ -55,7 +56,7 @@ class TRCommand extends Command
                                 $sender->sendMessage(TextFormat::RED . "The player '$player' cannot be found.");
                             }
                         }
-                    break;
+                        break;
                 }
             } else {
                 $sender->sendMessage($this->getUsage());
