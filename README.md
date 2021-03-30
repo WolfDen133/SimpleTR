@@ -19,5 +19,7 @@ Permission: `tellraw.command.use`
 | `@r` | Random player in the server |
 | `@s` | Command sender |
 
+You can use `{player}` for the targets name, `#` for a line break and `&` for colors
+
 You can also send a message to more than 1 player by executing `/tellraw player1,player2 (message...)`
  
