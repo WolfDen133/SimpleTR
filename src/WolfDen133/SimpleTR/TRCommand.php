@@ -51,7 +51,7 @@ class TRCommand extends Command
                         foreach ($targets as $player) {
                             $target = $this->plugin->getServer()->getPlayer($player);
                             if ($target instanceof Player) {
-                                $target->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$player->getName(), "\n", "§"], array_splice($args, 1))));
+                                $target->sendMessage(implode(" ", str_replace(["{player}", "#", "&"], [$target->getName(), "\n", "§"], array_splice($args, 1))));
                             } else {
                                 $sender->sendMessage(TextFormat::RED . "The player '$player' cannot be found.");
                             }
