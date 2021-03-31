@@ -4,10 +4,12 @@ namespace WolfDen133\SimpleTR;
 
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
+use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\Player;
+use pocketmine\plugin\Plugin;
 use pocketmine\utils\TextFormat;
 
-class TRCommand extends Command
+class TRCommand extends Command implements PluginIdentifiableCommand
 {
     /** @var Main */
     public $plugin;
@@ -64,5 +66,10 @@ class TRCommand extends Command
         } else {
             $sender->sendMessage($this->getPermissionMessage());
         }
+    }
+
+    public function getPlugin(): Plugin
+    {
+        return $this->plugin;
     }
 }
