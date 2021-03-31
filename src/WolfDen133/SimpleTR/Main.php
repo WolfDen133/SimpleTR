@@ -9,10 +9,10 @@ use pocketmine\plugin\PluginBase;
 class Main extends PluginBase{
 
 
-public function onEnable()
-{
-    $commandmap = $this->getServer()->getCommandMap();
-    $commandmap->register("tellraw", new TRCommand($this));
-}
+    public function onEnable()
+    {
+        $commandmap = $this->getServer()->getCommandMap();
+        $commandmap->register("SimpleTR", new TRCommand($this));
+    }
 
 }
